@@ -35,7 +35,8 @@
 
       img {
         max-width: 170px;
-        display: block;
+        display: inline-block;
+        vertical-align: middle;
       }
 
       a:hover {
@@ -43,16 +44,16 @@
       }
 
       nav:hover span {
-        display: block;
+        display: inline-block;
       }
 
       a {
         display: block;
         text-decoration: none;
+        white-space: nowrap;
       }
 
       span {
-        margin-left: 250px;
         display: none;
         color: white;
       }
@@ -68,11 +69,11 @@
   <body>
     <nav>
       <section class="menu-text">Menu</section>
-      <a href=""><span>EDIT</span><img src="images/edit.png" alt="" /></a>
-      <a href=""><span>FAVORITIES</span><img src="images/favorites.png" alt="" /></a>
-      <a href=""><span>HISTORY</span><img src="images/history.png" alt="" /></a>
-      <a href=""><span>SECURITY</span><img src="images/security.png" alt="" /></a>
-      <a href=""><span>SETTINGS</span><img src="images/settings.png" alt="" /></a>
+      <a href=""><img src="images/edit.png" alt="" /><span>EDIT</span></a>
+      <a href=""><img src="images/favorites.png" alt="" /><span>FAVORITIES</span></a>
+      <a href=""><img src="images/history.png" alt="" /><span>HISTORY</span></a>
+      <a href=""><img src="images/security.png" alt="" /><span>SECURITY</span></a>
+      <a href=""><img src="images/settings.png" alt="" /><span>SETTINGS</span></a>
     </nav>
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil libero
