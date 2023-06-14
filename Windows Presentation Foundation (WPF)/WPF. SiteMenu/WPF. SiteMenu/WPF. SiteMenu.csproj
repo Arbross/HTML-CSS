@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>WPF._SiteMenu</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Image\**" />
+    <EmbeddedResource Remove="Image\**" />
+    <None Remove="Image\**" />
+    <Page Remove="Image\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Logo.png" />
+    <None Remove="Notification.png" />
+    <None Remove="Ques.png" />
+    <None Remove="S1.png" />
+    <None Remove="S10.png" />
+    <None Remove="S11.png" />
+    <None Remove="S1_1.jpg" />
+    <None Remove="S2.png" />
+    <None Remove="S3.png" />
+    <None Remove="S4.png" />
+    <None Remove="S5.png" />
+    <None Remove="S6.png" />
+    <None Remove="S7.png" />
+    <None Remove="S8.png" />
+    <None Remove="S9.png" />
+    <None Remove="Settings.png" />
+    <None Remove="Skype.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Logo.png" />
+    <Resource Include="Notification.png" />
+    <Resource Include="Ques.png" />
+    <Resource Include="S1.png" />
+    <Resource Include="S10.png" />
+    <Resource Include="S11.png" />
+    <Resource Include="S1_1.jpg" />
+    <Resource Include="S2.png" />
+    <Resource Include="S3.png" />
+    <Resource Include="S4.png" />
+    <Resource Include="S5.png" />
+    <Resource Include="S6.png" />
+    <Resource Include="S7.png" />
+    <Resource Include="S8.png" />
+    <Resource Include="S9.png" />
+    <Resource Include="Settings.png" />
+    <Resource Include="Skype.png" />
+  </ItemGroup>
+
+</Project>

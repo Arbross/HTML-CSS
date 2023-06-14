@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF. Design Shulte Styles", "WPF. Design Shulte Styles\WPF. Design Shulte Styles.csproj", "{519EC373-B076-4DCC-88AA-793EABD6201E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{519EC373-B076-4DCC-88AA-793EABD6201E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{519EC373-B076-4DCC-88AA-793EABD6201E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{519EC373-B076-4DCC-88AA-793EABD6201E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{519EC373-B076-4DCC-88AA-793EABD6201E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B4F0116-487F-45A0-9FE9-6473E6A6905E}
+	EndGlobalSection
+EndGlobal

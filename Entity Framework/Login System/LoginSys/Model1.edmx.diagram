@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="44bc3f3a0e334bab865e29152acf82e4" Name="Diagram1">
+        <EntityTypeShape EntityType="UserLoginDBModel.PastRent" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UserLoginDBModel.Rent" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UserLoginDBModel.Room" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UserLoginDBModel.User" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="UserLoginDBModel.FK__PastRents__RoomI__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="UserLoginDBModel.FK__PastRents__UserI__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="UserLoginDBModel.FK__Rents__RoomId__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="UserLoginDBModel.FK__Rents__UserId__6B24EA82" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

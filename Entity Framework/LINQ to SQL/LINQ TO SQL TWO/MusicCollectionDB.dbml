@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MusicCollection" Class="MusicCollectionDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HOME;Initial Catalog=MusicCollection;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="LINQ_TO_SQL_TWO.Properties.Settings" SettingsPropertyName="MusicCollectionConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.MusicDiscs" Member="MusicDiscs">
+    <Type Name="MusicDiscs">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PerformerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReleaseDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="StyleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PublisherId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MusicDiscs_Songs" Member="Songs" ThisKey="Id" OtherKey="MusicDiscId" Type="Songs" />
+      <Association Name="Performers_MusicDiscs" Member="Performers" ThisKey="PerformerId" OtherKey="Id" Type="Performers" IsForeignKey="true" />
+      <Association Name="Publishers_MusicDiscs" Member="Publishers" ThisKey="PublisherId" OtherKey="Id" Type="Publishers" IsForeignKey="true" />
+      <Association Name="Styles_MusicDiscs" Member="Styles" ThisKey="StyleId" OtherKey="Id" Type="Styles" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Performers" Member="Performers">
+    <Type Name="Performers">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Performers_MusicDiscs" Member="MusicDiscs" ThisKey="Id" OtherKey="PerformerId" Type="MusicDiscs" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Publishers" Member="Publishers">
+    <Type Name="Publishers">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Publishers_MusicDiscs" Member="MusicDiscs" ThisKey="Id" OtherKey="PublisherId" Type="MusicDiscs" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Songs" Member="Songs">
+    <Type Name="Songs">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Duration" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="MusicDiscId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MusicDiscs_Songs" Member="MusicDiscs" ThisKey="MusicDiscId" OtherKey="Id" Type="MusicDiscs" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Styles" Member="Styles">
+    <Type Name="Styles">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Styles_MusicDiscs" Member="MusicDiscs" ThisKey="Id" OtherKey="StyleId" Type="MusicDiscs" />
+    </Type>
+  </Table>
+</Database>

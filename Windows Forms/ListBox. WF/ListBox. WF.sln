@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBox. WF", "ListBox. WF\ListBox. WF.csproj", "{7E3897C7-629F-436E-8DB0-9A3C145B7424}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboBox", "ComboBox\ComboBox.csproj", "{0CC4924B-CDE3-41E0-8F66-3130C558613C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E3897C7-629F-436E-8DB0-9A3C145B7424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E3897C7-629F-436E-8DB0-9A3C145B7424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E3897C7-629F-436E-8DB0-9A3C145B7424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E3897C7-629F-436E-8DB0-9A3C145B7424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CC4924B-CDE3-41E0-8F66-3130C558613C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CC4924B-CDE3-41E0-8F66-3130C558613C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CC4924B-CDE3-41E0-8F66-3130C558613C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CC4924B-CDE3-41E0-8F66-3130C558613C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE9FBC13-AF36-421D-B5AB-E40661955500}
+	EndGlobalSection
+EndGlobal

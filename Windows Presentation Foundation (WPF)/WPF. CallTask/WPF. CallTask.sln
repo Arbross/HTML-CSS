@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF. CallTask", "WPF. CallTask\WPF. CallTask.csproj", "{F3FBFE89-688E-4337-A2F6-6514E5D75483}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3FBFE89-688E-4337-A2F6-6514E5D75483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3FBFE89-688E-4337-A2F6-6514E5D75483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3FBFE89-688E-4337-A2F6-6514E5D75483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3FBFE89-688E-4337-A2F6-6514E5D75483}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6327E25-DFE3-4AA7-8767-B71B1DE7AD02}
+	EndGlobalSection
+EndGlobal

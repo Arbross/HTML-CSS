@@ -1,0 +1,597 @@
+﻿<Window x:Class="WPF._Paint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF._Paint"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Speed : "/>
+        <Label Grid.Column="1" Content="0" Name="Speed"/>
+        <Label Grid.Column="2" Content="chars/min"/>
+        <Label Grid.Column="4" Content="Fails : "/>
+        <Label Grid.Column="5" Content="0" Name="Fails"/>
+        <Label Grid.Column="7" Grid.ColumnSpan="8" Content="Difficulty : "/>
+        <Label Name="lblDifficulty" Grid.Column="8" HorizontalAlignment="Right" Content="0"/>
+        <Slider Name="difficulty" Grid.Column="5" Maximum="5" TickFrequency="1" Grid.ColumnSpan="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" ValueChanged="Slider_ValueChanged"/>
+        <CheckBox Name="isUpOrDown" Grid.Column="11" Grid.ColumnSpan="12" VerticalAlignment="Center" Content="Case Sensitive" Unchecked="isUpOrDown_Unchecked" Checked="isUpOrDown_Checked_1"/>
+        <Button Name="start" Content="Start" Margin="3" BorderThickness="0" Grid.Column="8" Grid.ColumnSpan="3" Grid.Row="1" Click="start_Click"/>
+        <Button Name="stop" Content="Stop" Margin="3" BorderThickness="0" Grid.Column="12" Grid.ColumnSpan="3" Grid.Row="1" Click="stop_Click"/>
+        <Border Background="LightBlue" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="15" Margin="3" BorderThickness="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Name="autoFillLbl" Content="{Binding Words}"/>
+                <Label Grid.Row="1" Name="fillLbl" BorderThickness="0"/>
+            </Grid>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="q" Opacity="100" Click="q_Click" Content="`" FontSize="60" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="1" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="one" Opacity="100" Click="q_Click" Content="1" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="two" Opacity="100" Click="q_Click" Content="2" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="3" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="three" Opacity="100" Click="q_Click" Content="3" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="4" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="four" Opacity="100" Click="q_Click" Content="4" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="5" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="five" Opacity="100" Click="q_Click" Content="5" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="6" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="six" Opacity="100" Click="q_Click" Content="6" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="5" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="r" Opacity="100" Click="q_Click" Content="r" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="5" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="f" Opacity="100" Click="q_Click" Content="f" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="5" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="v" Opacity="100" Click="q_Click" Content="v" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="6" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="b" Opacity="100" Click="q_Click" Content="b" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="6" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="g" Opacity="100" Click="q_Click" Content="g" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="6" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="t" Opacity="100" Click="q_Click" Content="t" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="7" Grid.Row="3" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="seven" Opacity="100" Click="q_Click" Content="7" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="8" Grid.Row="3" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="eight" Opacity="100" Click="q_Click" Content="8" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="9" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="nine" Opacity="100" Click="q_Click" Content="9" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="10" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="zero" Opacity="100" Click="q_Click" Content="0" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="11" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="tire" Opacity="100" Click="q_Click" Content="-" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="13" Grid.ColumnSpan="14" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="backspace" Opacity="100" Content="Backspace" FontSize="20" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="12" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="equeal" Opacity="100" Click="q_Click" Content="=" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightGray">
+            <StackPanel>
+                <Button Name="tab" Opacity="100" Content="Tab" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightGray">
+            <StackPanel>
+                <Button Name="capsLock" Opacity="100" Content="Caps Lock" FontSize="20" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightGray">
+            <StackPanel>
+                <Button Name="lshift" Opacity="100" Content="Shift" FontSize="20" Background="Transparent" BorderThickness="0" Click="lshift_Click"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="14" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="unslash" Opacity="100" Click="q_Click" Content="\" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="13" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="reqright" Opacity="100" Click="q_Click" Content="]" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="12" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="reqleft" Opacity="100" Click="q_Click" Content="[" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="11" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="p" Opacity="100" Click="q_Click" Content="p" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="11" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="dotcoma" Opacity="100" Click="q_Click" Content=";" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="12" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="upcoma" Opacity="100" Click="q_Click" Content="'" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="11" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="slash" Opacity="100" Click="q_Click" Content="/" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="4" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="e" Opacity="100" Click="q_Click" Content="e" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="4" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="d" Opacity="100" Click="q_Click" Content="d" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="4" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="c" Opacity="100" Click="q_Click" Content="c" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="3" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="w" Opacity="100" Click="q_Click" Content="w" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="3" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="s" Opacity="100" Click="q_Click" Content="s" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="3" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="x" Opacity="100" Click="q_Click" Content="x" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="10" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="dot" Opacity="100" Click="q_Click" Content="." FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="10" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="l" Opacity="100" Click="q_Click" Content="l" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="10" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="o" Opacity="100" Click="q_Click" Content="o" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="9" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="i" Opacity="100" Click="q_Click" Content="i" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="9" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="k" Opacity="100" Click="q_Click" Content="k" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="9" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="coma" Opacity="100" Click="q_Click" Content="," FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="qq" Opacity="100" Click="q_Click" Content="q" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="a" Opacity="100" Click="q_Click" Content="a" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="z" Opacity="100" Click="q_Click" Content="z" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="7" CornerRadius="15" Margin="5" Background="LightGray">
+            <StackPanel>
+                <Button Name="leftctrl" Opacity="100" Content="Ctrl" FontSize="20" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="1" Grid.Row="7" CornerRadius="15" Margin="5" Background="LightGray">
+            <StackPanel>
+                <Button Name="leftwin" Opacity="100" Content="Win" FontSize="20" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="7" CornerRadius="15" Margin="5" Background="LightGray">
+            <StackPanel>
+                <Button Name="leftalt" Opacity="100" Content="Alt" FontSize="20" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="12" Grid.Row="7" CornerRadius="15" Margin="5" Background="LightGray">
+            <StackPanel>
+                <Button Name="rightaslt" Opacity="100" Content="Alt" FontSize="20" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="13" Grid.Row="7" CornerRadius="15" Margin="5" Background="LightGray">
+            <StackPanel>
+                <Button Name="rightwin" Opacity="100" Content="Win" FontSize="20" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="14" Grid.Row="7" CornerRadius="15" Margin="5" Background="LightGray">
+            <StackPanel>
+                <Button Name="rightctrl" Opacity="100" Content="Ctrl" FontSize="20" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="12" Grid.ColumnSpan="3" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightGray">
+            <StackPanel>
+                <Button Name="rightshift" Opacity="100" Content="Shift" FontSize="20" Background="Transparent" BorderThickness="0" Click="lshift_Click"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="13" Grid.ColumnSpan="2" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightGray">
+            <StackPanel>
+                <Button Name="enter" Opacity="100" Content="Enter" FontSize="20" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="3" Grid.ColumnSpan="9" Grid.Row="7" CornerRadius="15" Margin="5" Background="LightGray">
+            <StackPanel>
+                <Button Name="space" Opacity="100" Content="Space" FontSize="20" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="8" Grid.Row="4" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="u" Opacity="100" Click="q_Click" Content="u" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="8" Grid.Row="5" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="j" Opacity="100" Click="q_Click" Content="j" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="8" Grid.Row="6" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="m" Opacity="100" Click="q_Click" Content="m" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="7" Grid.Row="4" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="y" Opacity="100" Click="q_Click" Content="y" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="7" Grid.Row="5" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="h" Opacity="100" Click="q_Click" Content="h" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="7" Grid.Row="6" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="n" Opacity="100" Click="q_Click" Content="n" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+
+
+
+        <Border Name="QQQQ" Grid.Column="0" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="Q" Opacity="100" Click="q_Click" Content="~" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="ONEE" Grid.Column="1" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="ONE" Opacity="100" Click="q_Click" Content="!" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="TWOO" Grid.Column="2" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="TWO" Opacity="100" Click="q_Click" Content="@" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="THREEE" Grid.Column="3" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="THREE" Opacity="100" Click="q_Click" Content="#" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="FOURR" Grid.Column="4" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="FOUR" Opacity="100" Click="q_Click" Content="$" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="FIVEE" Grid.Column="5" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="FIVE" Opacity="100" Click="q_Click" Content="%" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="SIXX" Grid.Column="6" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="SIX" Opacity="100" Click="q_Click" Content="^" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="RR" Grid.Column="5" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="R" Opacity="100" Click="q_Click" Content="R" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="FF" Grid.Column="5" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="F" Opacity="100" Click="q_Click" Content="F" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="VV" Grid.Column="5" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="V" Opacity="100" Click="q_Click" Content="V" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="BB" Grid.Column="6" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="B" Opacity="100" Click="q_Click" Content="B" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="GG" Grid.Column="6" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="G" Opacity="100" Click="q_Click" Content="G" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="TT" Grid.Column="6" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightBlue">
+            <StackPanel>
+                <Button Name="T" Opacity="100" Click="q_Click" Content="T" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="SEVENN" Grid.Column="7" Grid.Row="3" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="SEVEN" Opacity="100" Click="q_Click" Content="&amp;" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="EIGHTT" Grid.Column="8" Grid.Row="3" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="EIGHT" Opacity="100" Click="q_Click" Content="*" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="NINEE" Grid.Column="9" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="NINE" Opacity="100" Click="q_Click" Content="(" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="ZEROO" Grid.Column="10" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="ZERO" Opacity="100" Click="q_Click" Content=")" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="TIREE" Grid.Column="11" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="TIRE" Opacity="100" Click="q_Click" Content="_" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="EQUEALL" Grid.Column="12" Grid.Row="3" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="EQUEAL" Opacity="100" Click="q_Click" Content="+" FontSize="40" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="UNSLASHH" Grid.Column="14" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="UNSLASH" Opacity="100" Click="q_Click" Content="|" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="REQRIGHTT" Grid.Column="13" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="REQRIGHT" Opacity="100" Click="q_Click" Content="}" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="REQLEFTT" Grid.Column="12" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="REQLEFT" Opacity="100" Click="q_Click" Content="{}{" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="PP" Grid.Column="11" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="P" Opacity="100" Click="q_Click" Content="P" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="DOTCOMAA" Grid.Column="11" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="DOTCOMA" Opacity="100" Click="q_Click" Content=":" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="UPCOMAA" Grid.Column="12" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="UPCOMA" Opacity="100" Click="q_Click" Content="&quot;" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="SLASHH" Grid.Column="11" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="SLASH" Opacity="100" Click="q_Click" Content="?" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="EE" Grid.Column="4" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="E" Opacity="100" Click="q_Click" Content="E" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="DD" Grid.Column="4" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="D" Opacity="100" Click="q_Click" Content="D" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="CC" Grid.Column="4" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightGreen">
+            <StackPanel>
+                <Button Name="C" Opacity="100" Click="q_Click" Content="C" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="WW" Grid.Column="3" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="W" Opacity="100" Click="q_Click" Content="W" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="SS" Grid.Column="3" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="S" Opacity="100" Click="q_Click" Content="S" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="XX" Grid.Column="3" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="X" Opacity="100" Click="q_Click" Content="X" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="DOTT" Grid.Column="10" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="DOT" Opacity="100" Click="q_Click" Content=">" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="LL" Grid.Column="10" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="L" Opacity="100" Click="q_Click" Content="L" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="OO" Grid.Column="10" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightYellow">
+            <StackPanel>
+                <Button Name="O" Opacity="100" Click="q_Click" Content="O" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="II" Grid.Column="9" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="I" Opacity="100" Click="q_Click" Content="I" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="KK" Grid.Column="9" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="K" Opacity="100" Click="q_Click" Content="K" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="COMAA" Grid.Column="9" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="COMA" Opacity="100" Click="q_Click" Content="&lt;" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="QQQ" Grid.Column="2" Grid.Row="4" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="QQ" Opacity="100" Click="q_Click" Content="Q" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="AA" Grid.Column="2" Grid.Row="5" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="A" Opacity="100" Click="q_Click" Content="A" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="ZZ" Grid.Column="2" Grid.Row="6" CornerRadius="15" Margin="5" Background="LightPink">
+            <StackPanel>
+                <Button Name="Z" Opacity="100" Click="q_Click" Content="Z" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="UU" Grid.Column="8" Grid.Row="4" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="U" Opacity="100" Click="q_Click" Content="U" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="JJ" Grid.Column="8" Grid.Row="5" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="J" Opacity="100" Click="q_Click" Content="J" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="MM" Grid.Column="8" Grid.Row="6" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="M" Opacity="100" Click="q_Click" Content="M" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="YY" Grid.Column="7" Grid.Row="4" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="Y" Opacity="100" Click="q_Click" Content="Y" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="HH" Grid.Column="7" Grid.Row="5" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="H" Opacity="100" Click="q_Click" Content="H" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+        <Border Name="NN" Grid.Column="7" Grid.Row="6" CornerRadius="15" Margin="5" Background="PaleVioletRed">
+            <StackPanel>
+                <Button Name="N" Opacity="100" Click="q_Click" Content="N" FontSize="30" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

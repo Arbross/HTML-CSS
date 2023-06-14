@@ -1,0 +1,51 @@
+﻿<Window x:Class="Threads.HW.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Threads.HW"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Task 1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" BorderThickness="1" x:Name="inFirst"/>
+            <TextBox Grid.Row="1" BorderThickness="1" x:Name="inSecond"/>
+            <Button Grid.Row="2" BorderThickness="0" Content="Enter" FontSize="25" Click="Enter_Click"/>
+            <ComboBox x:Name="lblOutput" Grid.Row="3" BorderThickness="0"/>
+        </Grid>
+        <Label Content="Task 2, 3, 4, 5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" BorderThickness="1" x:Name="inSecondTwo"/>
+            <Button Grid.Row="1" BorderThickness="0" Content="Enter" FontSize="25" Click="Enter_Click_Two"/>
+            <Button Grid.Row="2" BorderThickness="0" Content="Abort" FontSize="25" Click="Button_Click"/>
+            <Button Grid.Row="3" BorderThickness="0" Content="Pause" FontSize="25" Click="Button_Click_1"/>
+            <Button Grid.Row="4" BorderThickness="0" Content="Resume" FontSize="25" Click="Button_Click_2"/>
+            <Button Grid.Row="5" BorderThickness="0" Content="Restart" FontSize="25" Click="Button_Click_3"/>
+            <ComboBox x:Name="lblOutputTwo" Grid.Row="6" BorderThickness="0"/>
+        </Grid>
+    </Grid>
+</Window>

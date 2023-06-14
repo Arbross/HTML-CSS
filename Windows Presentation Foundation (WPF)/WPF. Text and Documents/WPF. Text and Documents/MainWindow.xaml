@@ -1,0 +1,34 @@
+﻿<Window x:Class="WPF._Text_and_Documents.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF._Text_and_Documents"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+        <ToolBarTray Grid.Row="0">
+            <ToolBar>
+                <Button x:Name="Bold" Click="Bold_Click">Bold</Button>
+                <Button x:Name="Italic" Click="Italic_Click">Italic</Button>
+                <Button x:Name="Underline" Click="Underline_Click">Underline</Button>
+                <Button Click="Button_Click">Clear</Button>
+            </ToolBar>
+            <ToolBar>
+                <Label>Color : </Label>
+                <ComboBox x:Name="Colors" MinWidth="90" SelectionChanged="Colors_SelectionChanged"></ComboBox>
+            </ToolBar>
+            <ToolBar>
+                <Label>Font Size :</Label>
+                <ComboBox x:Name="Size" MinWidth="40" SelectionChanged="ComboBox_SelectionChanged"></ComboBox>
+            </ToolBar>
+        </ToolBarTray>
+        <RichTextBox x:Name="rtbText" Grid.Row="1">
+            
+        </RichTextBox>
+    </Grid>
+</Window>

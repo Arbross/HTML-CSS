@@ -1,0 +1,40 @@
+﻿<Window x:Class="Downloader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Downloader"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="Black">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Downloader" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" FontWeight="DemiBold" Foreground="White"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="tbUrl" Background="Black" BorderThickness="0" Grid.Column="0" Foreground="White" Text="Url" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Button Grid.Column="1" x:Name="btnSave" Content="Save" FontSize="25" Background="White" BorderThickness="0" FontWeight="DemiBold" Click="btnSave_Click"/>
+            <Button Grid.Column="2" x:Name="btnDownload" Content="Download" FontSize="25" Background="White" BorderThickness="0" FontWeight="DemiBold" Click="btnDownload_Click"/>
+        </Grid>
+        <ListBox x:Name="lbOutput" Grid.Row="2" Background="Black" BorderThickness="0" Foreground="White" FontWeight="DemiBold">
+        </ListBox>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnCancel" BorderThickness="0" Foreground="White" Background="Black" Content="Cancel" FontSize="25" FontWeight="DemiBold" Grid.Column="0" Height="44" VerticalAlignment="Top" Click="btnCancel_Click"/>
+            <Button x:Name="btnStop" BorderThickness="0" Foreground="White" Background="Black" Content="Stop" FontSize="25" FontWeight="DemiBold" Grid.Column="1" Click="btnStop_Click"/>
+            <Button x:Name="btnContinue" BorderThickness="0" Foreground="White" Background="Black" Content="Continue" FontSize="25" FontWeight="DemiBold" Grid.Column="2" Click="btnContinue_Click"/>
+        </Grid>
+        </Grid>
+</Window>

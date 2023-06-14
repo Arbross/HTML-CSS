@@ -1,0 +1,39 @@
+﻿<Window x:Class="Sockets.Class_Work.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sockets.Class_Work"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="IP : " FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" FontWeight="DemiBold"/>
+            <Label Content="Port : " FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" FontWeight="DemiBold"/>
+            <TextBox x:Name="tbIP" BorderThickness="0" Grid.Column="1" FontSize="30"/>
+            <TextBox x:Name="tbPort" BorderThickness="0" Grid.Column="3" FontSize="30"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="tbMessage" BorderThickness="0" Text="Message" TextAlignment="Left" VerticalAlignment="Center" FontSize="25"/>
+            <Button x:Name="btnSend" BorderThickness="0" Content="Send" Background="LightYellow" Grid.Column="1" FontSize="25" FontWeight="DemiBold" Click="btnSend_Click"/>
+        </Grid>
+        <Label Content="Dialog : " Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" FontWeight="DemiBold"/>
+        <ListBox x:Name="lbDialog" Grid.Row="3" BorderThickness="0"/>
+    </Grid>
+</Window>

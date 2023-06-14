@@ -1,0 +1,51 @@
+﻿<Window x:Class="WPF._CallTask.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF._CallTask"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" Grid.ColumnSpan="3" Content="Call hotel number" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35" FontFamily="Vernada"/>
+        <Label Grid.Row="1" Grid.Column="1" Target="{Binding ElementName=name}" Content="_Name : " FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Name="name"  Grid.Row="1" Grid.Column="2" Margin="5"/>
+        <Label Grid.Row="2" Grid.Column="1" Target="{Binding ElementName=surname}" Content="_Surname : " FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Grid.Row="2" Name="surname" Grid.Column="2" Margin="5"/>
+        <Label Grid.Row="3" Target="{Binding ElementName=info}" Grid.Column="1" Content="_Contact info : " FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Grid.Row="3" Name="info"  Grid.Column="2" Margin="5"/>
+        <Label Grid.Row="4" Grid.Column="1" Target="{Binding ElementName=people}" Content="_People quantity : " FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <RepeatButton Name="people" Grid.Row="4" Grid.Column="2" Margin="5" Click="people_Click"/>
+        <Label Grid.Row="4" Grid.Column="3" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label Grid.Row="5" Grid.Column="1" Target="{Binding ElementName=number}" Content="_Number type(eco, std, vip) : " FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <CheckBox Grid.Row="5" Name="number" Grid.Column="2" Margin="5" IsThreeState="True" FontSize="20" Content="Eco, std, vip type." VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label Grid.Row="6" Grid.Column="1" Target="{Binding ElementName=calendar}" Content="_Date : " FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Calendar Grid.Column="2" Name="calendar" Grid.Row="6" SelectionMode="MultipleRange" SelectedDatesChanged="calendar_SelectedDatesChanged"/>
+        <Label Grid.Row="7" Grid.Column="1" Target="{Binding ElementName=rules}" Content="_Rules accept : " FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <CheckBox Grid.Row="7" Grid.Column="2" Name="rules" Margin="5" FontSize="20" Content="Rules accept." VerticalAlignment="Center" HorizontalAlignment="Center" Click="rules_Click"/>
+        <Label Grid.Row="8" Grid.Column="1" Target="{Binding ElementName=accept}" Content="_Accept : " FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Row="8" Name="accept" Grid.Column="2" Content="Accept" Margin="5" Click="accept_Click"/>
+        <Label Grid.Row="9" Grid.Column="1" Target="{Binding ElementName=decline}" Content="_Decline : " FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Row="9" Grid.Column="2" Name="decline" Content="Decline" Margin="5" Click="decline_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RndListBoxGenerate. WF", "RndListBoxGenerate. WF\RndListBoxGenerate. WF.csproj", "{D33934FC-6E5A-429C-8AC6-A58EEA48CB53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TakeTowns. WF", "TakeTowns. WF\TakeTowns. WF.csproj", "{495F7E07-E0E1-462F-A55D-D664CCCCE555}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D33934FC-6E5A-429C-8AC6-A58EEA48CB53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D33934FC-6E5A-429C-8AC6-A58EEA48CB53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D33934FC-6E5A-429C-8AC6-A58EEA48CB53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D33934FC-6E5A-429C-8AC6-A58EEA48CB53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{495F7E07-E0E1-462F-A55D-D664CCCCE555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{495F7E07-E0E1-462F-A55D-D664CCCCE555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{495F7E07-E0E1-462F-A55D-D664CCCCE555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{495F7E07-E0E1-462F-A55D-D664CCCCE555}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9817A872-E079-4046-B6A6-D970865C15B2}
+	EndGlobalSection
+EndGlobal

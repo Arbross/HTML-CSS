@@ -1,0 +1,40 @@
+﻿<Window x:Class="Processes.Task_Manager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Processes.Task_Manager"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ComboBox BorderThickness="0" x:Name="TypeListUpdate" SelectionChanged="TypeListUpdate_SelectionChanged"/>
+            <Button BorderThickness="0" x:Name="btnStop" Grid.Column="1" Content="Timer Stop" Click="btnStop_Click"/>
+            <Button BorderThickness="0" x:Name="btnKill" Grid.Column="2" Content="Kill Process" Click="btnKill_Click"/>
+            <Button BorderThickness="0" x:Name="btnInfo" Grid.Column="3" Content="Process Info" Click="btnInfo_Click"/>
+            <TextBox BorderThickness="0" x:Name="GetPath" Grid.Column="4" Text="Path" VerticalAlignment="Center"/>
+            <Button BorderThickness="0" x:Name="btnStart" Grid.Column="5" Content="Start *.exe" Click="btnStart_Click"/>
+        </Grid>
+        <DataGrid BorderThickness="0" x:Name="ContextTM" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="PID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Total Processor Time" Binding="{Binding TotalProcessorTime}" />
+                <DataGridTextColumn Header="Priority" Binding="{Binding PriorityClass}" />
+                <DataGridTextColumn Header="Process Name" Binding="{Binding ProcessName}" />
+                <DataGridTextColumn Header="User Name" Binding="{Binding UserName}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

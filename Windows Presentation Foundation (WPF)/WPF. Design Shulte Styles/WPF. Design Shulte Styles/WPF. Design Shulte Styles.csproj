@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>WPF._Design_Shulte_Styles</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="eye.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="eye.png" />
+  </ItemGroup>
+
+</Project>

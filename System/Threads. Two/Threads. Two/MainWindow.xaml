@@ -1,0 +1,32 @@
+﻿<Window x:Class="Threads.Two.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Threads.Two"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <ComboBox x:Name="PriorityNumber" BorderThickness="0" Grid.Column="1" SelectionChanged="PriorityNumber_SelectionChanged"/>
+        <Button x:Name="btnNumbersStart" BorderThickness="0" Grid.Column="0" Content="Start" FontSize="20" FontWeight="Bold" Click="btnNumbersStart_Click"/>
+        <ComboBox x:Name="PriorityLetters" BorderThickness="0" Grid.Column="3" SelectionChanged="PriorityLetters_SelectionChanged"/>
+        <Button x:Name="btnLettersStart" BorderThickness="0" Grid.Column="2" Content="Start" FontSize="20" FontWeight="Bold" Click="btnLettersStart_Click"/>
+        <ComboBox x:Name="PrioritySymbols" BorderThickness="0" Grid.Column="5" SelectionChanged="PrioritySymbols_SelectionChanged"/>
+        <Button x:Name="btnSymbolsStart" BorderThickness="0" Grid.Column="4" Content="Start" FontSize="20" FontWeight="Bold" Click="btnSymbolsStart_Click"/>
+        <ComboBox x:Name="Numbers" BorderThickness="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <ComboBox x:Name="Letters" BorderThickness="0" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <ComboBox x:Name="Symbols" BorderThickness="0" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="1"/>
+    </Grid>
+</Window>

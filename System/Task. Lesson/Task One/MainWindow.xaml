@@ -1,0 +1,33 @@
+﻿<Window x:Class="Task_One.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task_One"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="txtbText" BorderThickness="1" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True"/>
+            <Button x:Name="btnEnter" Grid.Column="0" Content="Enter" FontSize="20" FontWeight="Bold" BorderThickness="0" Click="btnEnter_Click"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnScreen" Grid.Column="0" Content="Screen" FontSize="20" FontWeight="Bold" BorderThickness="0" Click="btnScreen_Click"/>
+            <Button x:Name="btnLogs" Grid.Column="1" Content="Logs" FontSize="20" FontWeight="Bold" BorderThickness="0" Click="btnLogs_Click"/>
+        </Grid>
+        <Label x:Name="lblShow" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>

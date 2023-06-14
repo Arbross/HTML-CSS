@@ -1,0 +1,89 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+<div class="text-center">
+    <p>@ViewBag.ErrorMessage</p>
+</div>
+@if (Model.IsStarted)
+{
+    <div class="text-center">
+        <form method="post" action="/Home/Stop">
+            <button type="submit" class="btn btn-danger">Стоп</button>
+        </form>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <form method="post" action="/Home/Start">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Интервал</span>
+                <input name="interval" type="number" class="form-control" aria-label="Interval" aria-describedby="Interval" value="10000">
+            </div>
+            <button type="submit" class="btn btn-success">Старт</button>
+        </form>
+    </div>
+}
+
+<br />
+<div class="text-center">
+    <form method="post" action="/Home/CreateLink">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Имя</span>
+            <input name="Name" type="text" class="form-control" aria-label="Interval" aria-describedby="Interval">
+        </div>
+        <div class="input-group">
+            <span class="input-group-text">Ссылка</span>
+            <input name="Url" type="text" class="form-control" aria-label="Interval" aria-describedby="Interval">
+        </div>
+        <br />
+        <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+</div>
+
+<br />
+<div class="text-center">
+    <form method="post" action="/Home/SetHours">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Время</span>
+            <input name="hours" type="text" class="form-control" aria-label="Время" aria-describedby="Время" value="@Model.Hours">
+        </div>
+        <br />
+        <button type="submit" class="btn btn-success">Изменить</button>
+    </form>
+</div>
+<br />
+<a href="/home/proxy">Proxy</a>
+<br />
+<table class="table" style="background: white; table-layout: fixed;">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Url</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var link in Model.Links)
+        {
+            <tr>
+                <th scope="row">@link.Name</th>
+                <td style="overflow: scroll"><a href="@link.Url">@link.Url</a></td>
+                <td>
+                    @if (link.Status)
+                    {
+                        <strong><a href="/home/editstatus?id=@link.Id&status=off">Off</a></strong>
+                    }
+                    else
+                    {
+                        <strong><a href="/home/editstatus?id=@link.Id&status=on">On</a></strong>
+                    }
+                </td>
+                <td><a href="/home/editlink?id=@link.Id">Edit</a> | <a href="/home/deletelink?id=@link.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,23 @@
+﻿@model Link
+@{
+    ViewData["Title"] = "Edit Link";
+}
+
+    <div class="text-center">
+        <a href="/Home">На главную</a>
+        <form method="post" action="/Home/EditLink">
+            <div class="input-group mb-3">
+                <input type="text" name="Id" value="@Model.Id" hidden />
+                <span class="input-group-text" id="inputGroup-sizing-default">Имя</span>
+                <input name="Name" type="text" class="form-control" value="@Model.Name" aria-label="Interval" aria-describedby="Interval">
+            </div>
+            <div class="input-group">
+                <span class="input-group-text">Ссылка</span>
+                <input name="Url" type="text" class="form-control" value="@Model.Url" aria-label="Interval" aria-describedby="Interval">
+                <input type="text" name="Status" value="@Model.Status" hidden/>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-success">Изменить</button>
+        </form>
+    </div>
+

@@ -1,0 +1,34 @@
+﻿<Window x:Class="Registry.HW.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Registry.HW"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Name="Win">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ComboBox Name="cbLightDarkStandard" BorderThickness="0" SelectionChanged="cbLightDarkStandard_SelectionChanged"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="tbFontSize" Text="Size"/>
+            <Button x:Name="btnFontSize" BorderThickness="0" Grid.Row="1" Content="Font Size" FontSize="30" FontWeight="DemiBold" Click="btnFontSize_Click"/>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnEn" BorderThickness="0" Grid.Column="0" Content="En" FontSize="40" FontWeight="DemiBold" Click="btnEn_Click"/>
+                <Button x:Name="btnUa" BorderThickness="0" Grid.Column="1" Content="Ua" FontSize="40" FontWeight="DemiBold" Click="btnUa_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

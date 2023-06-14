@@ -1,0 +1,39 @@
+﻿@model List<Proxy>
+@{
+    ViewData["Title"] = "Proxy";
+}
+
+<br />
+<div class="text-center">
+    <form method="post" action="/Home/AddProxy">
+        <div class="input-group">
+            <span class="input-group-text">Прокси</span>
+            <textarea name="proxies" class="form-control" aria-label="Interval" aria-describedby="Interval"></textarea>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+</div>
+<br />
+
+<a href="/home/index">Home</a>
+
+<br />
+<table class="table" style="background: white; table-layout: fixed;">
+    <thead>
+        <tr>
+            <th scope="col">Proxy</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var link in Model)
+        {
+            <tr>
+                <th scope="row">@link.Host</th>
+                <td><a href="/home/deleteproxy?id=@link.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
